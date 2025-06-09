@@ -54,12 +54,16 @@
             margin-left: 10px;
             font-size: 1.1em;
         }
+        .buttons-container {
+            display: flex;
+            justify-content: center; /* ממקם את הכפתורים במרכז */
+            gap: 20px; /* רווח בין הכפתורים */
+            margin-top: 30px;
+        }
         .button {
             display: block;
             width: fit-content;
-            margin: 30px auto 0;
             padding: 15px 30px;
-            background-color: #27ae60;
             color: white;
             text-decoration: none;
             border-radius: 5px;
@@ -67,8 +71,17 @@
             text-align: center;
             transition: background-color 0.3s ease;
         }
-        .button:hover {
-            background-color: #229a50;
+        .button.waze {
+            background-color: #4CAF50; /* ירוק לוויז */
+        }
+        .button.waze:hover {
+            background-color: #45a049;
+        }
+        .button.google-maps {
+            background-color: #007bff; /* כחול לגוגל מפות */
+        }
+        .button.google-maps:hover {
+            background-color: #0069d9;
         }
         .footer {
             text-align: center;
@@ -90,14 +103,17 @@
                 <li><strong>אירוע:</strong> שלישי-חומוס</li>
                 <li><strong>תאריך:</strong> כל יום שלישי</li>
                 <li><strong>שעה:</strong> 12:30 - 13:30</li>
-                <li><strong>מיקום:</strong> חומוס נרי</li>
-                <li><strong>המשתתפים הקבועים:</strong> מיכאל הורביץ, אליעזר פסיקוב, יעקב גוטליב (ואתם!)</li>
+                <li><strong>מיקום:</strong> חומוס נרי, מצדה 9, בני ברק</li>
+                <li><strong>המשתתפים הקבועים:</strong> מיכאל הורביץ, אליעזר פסיקוב, יעקב גוטליב (וגם דוד גלויברמן מוזמן😜)</li>
             </ul>
         </div>
 
         <p>הצטרפו אלינו למנה גדושה של חומוס, אווירה טובה ושיחות מרתקות. זו ההזדמנות המושלמת לקחת הפסקה מהשגרה, להתחבר עם חברים טובים וליהנות מארוחת צהריים משביעה.</p>
 
-        <a href="https://waze.com/ul/hsv8z3t2c5" target="_blank" class="button">נווט לחומוס נרי ב-Waze</a>
+        <div class="buttons-container">
+            <a href="https://waze.com/ul/hsv8y247m1" target="_blank" class="button waze">נווט ב-Waze</a>
+            <a href="https://maps.app.goo.gl/9R2Cg4aK1Q2yJc3r6" target="_blank" class="button google-maps">נווט בגוגל מפות</a>
+        </div>
 
         <div class="footer">
             <p>מצפים לראותכם!</p>
