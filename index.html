@@ -54,27 +54,17 @@
             margin-left: 10px;
             font-size: 1.1em;
         }
-        .buttons-container {
+        .map-container {
             display: flex;
-            justify-content: center; /* ממקם את הכפתורים במרכז */
+            justify-content: center; /* ממקם את המפה במרכז */
             margin-top: 30px;
+            margin-bottom: 30px; /* רווח מתחת למפה */
         }
-        .button {
-            display: block;
-            width: fit-content;
-            padding: 15px 30px;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 1.2em;
-            text-align: center;
-            transition: background-color 0.3s ease;
-        }
-        .button.waze {
-            background-color: #4CAF50; /* ירוק לוויז */
-        }
-        .button.waze:hover {
-            background-color: #45a049;
+        /* התאמות ל-iframe כדי להיות רספונסיבי במידת הצורך */
+        .map-container iframe {
+            max-width: 100%;
+            height: auto;
+            border: 0;
         }
         .footer {
             text-align: center;
@@ -103,8 +93,8 @@
 
         <p>הצטרפו אלינו למנה גדושה של חומוס, אווירה טובה ושיחות מרתקות. זו ההזדמנות המושלמת לקחת הפסקה מהשגרה, להתחבר עם חברים טובים וליהנות מארוחת צהריים משביעה.</p>
 
-        <div class="buttons-container">
-            <a href="https://waze.com/livemap/directions?lat=32.049372&lon=34.809215" target="_blank" class="button waze">נווט ב-Waze</a>
+        <div class="map-container">
+            <iframe src="https://embed.waze.com/iframe?zoom=16&lat=32.094455&lon=34.824353&ct=livemap" width="600" height="450" allowfullscreen></iframe>
         </div>
 
         <div class="footer">
