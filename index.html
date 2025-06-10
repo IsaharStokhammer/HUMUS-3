@@ -146,48 +146,47 @@
     </div>
   </div>
   <script>
-  function getNextTuesdayAt1245() {
-    const now = new Date();
-    const result = new Date(now);
-    result.setHours(12, 45, 0, 0);
-    
-    // חישוב הימים עד שלישי
-    const day = now.getDay(); // ראשון = 0
-    const daysUntilTuesday = (2 + 7 - day) % 7 || 7;
-    result.setDate(now.getDate() + daysUntilTuesday);
+    function getNextTuesdayAt1245() {
+      const now = new Date();
+      const result = new Date(now);
+      result.setHours(12, 45, 0, 0);
 
-    // אם היום שלישי אבל כבר עבר 12:45 - קפוץ לשבוע הבא
-    if (day === 2 && now > result) {
-      result.setDate(result.getDate() + 7);
+      const day = now.getDay(); // ראשון = 0
+      let daysUntilTuesday = (2 + 7 - day) % 7;
+
+      // אם היום שלישי וכבר עבר הזמן – עבור לשבוע הבא
+      if (day === 2 && now > result) {
+        daysUntilTuesday = 7;
+      }
+
+      result.setDate(now.getDate() + daysUntilTuesday);
+      return result;
     }
 
-    return result;
-  }
+    function updateCountdown() {
+      const countdownElement = document.getElementById("countdown");
+      const now = new Date();
+      const eventDate = getNextTuesdayAt1245();
 
-  function updateCountdown() {
-    const countdownElement = document.getElementById("countdown");
-    const now = new Date();
-    const eventDate = getNextTuesdayAt1245();
+      const diff = eventDate - now;
 
-    const diff = eventDate - now;
+      if (diff <= 0) {
+        countdownElement.textContent = "זה עכשיו! רוצו לחומוס!";
+        return;
+      }
 
-    if (diff <= 0) {
-      countdownElement.textContent = "זה עכשיו! רוצו לחומוס!";
-      return;
+      const totalSeconds = Math.floor(diff / 1000);
+      const days = Math.floor(totalSeconds / 86400);
+      const hours = Math.floor((totalSeconds % 86400) / 3600);
+      const minutes = Math.floor((totalSeconds % 3600) / 60);
+      const seconds = totalSeconds % 60;
+
+      countdownElement.textContent = `נותרו ${days} ימים, ${hours} שעות, ${minutes} דקות ו-${seconds} שניות למפגש הבא`;
     }
 
-    const totalSeconds = Math.floor(diff / 1000);
-    const days = Math.floor(totalSeconds / 86400);
-    const hours = Math.floor((totalSeconds % 86400) / 3600);
-    const minutes = Math.floor((totalSeconds % 3600) / 60);
-    const seconds = totalSeconds % 60;
-
-    countdownElement.textContent = `נותרו ${days} ימים, ${hours} שעות, ${minutes} דקות ו-${seconds} שניות למפגש הבא`;
-  }
-
-  updateCountdown();
-  setInterval(updateCountdown, 1000);
-</script>
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
 </body>
 
 </html>
