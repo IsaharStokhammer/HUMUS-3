@@ -12,43 +12,50 @@
             font-family: 'Heebo', sans-serif;
             direction: rtl;
             text-align: right;
-            margin: 0;
+            margin: 0; /* Minimized */
             padding: 0;
             background: url('https://ononews.co.il/wp-content/uploads/2025/01/Screenshot-2025-01-13-1331191.png') no-repeat center center fixed;
             background-size: cover;
             color: #333;
-            line-height: 1.7;
+            line-height: 1.6; /* Slightly reduced */
+            overflow: hidden; /* Hide scrollbar if content overflows */
+            height: 100vh; /* Ensure body takes full viewport height */
+            display: flex;
+            align-items: center; /* Vertically center content if space allows */
+            justify-content: center; /* Horizontally center content */
         }
 
         .container {
             max-width: 800px;
-            margin: 50px auto;
+            margin: 20px auto; /* Reduced margin */
             background-color: rgba(255, 255, 255, 0.97);
-            padding: 40px;
+            padding: 30px; /* Reduced padding */
             border-radius: 12px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            max-height: calc(100vh - 40px); /* Max height to fit viewport, considering body margin */
+            overflow-y: auto; /* Allow scrolling only if content *truly* overflows */
         }
 
         h1 {
             color: #2c3e50;
             text-align: center;
-            margin-bottom: 25px;
-            font-size: 2.5em;
+            margin-bottom: 20px; /* Reduced */
+            font-size: 2.2em; /* Reduced */
             font-weight: 700;
         }
 
         h2 {
             color: #34495e;
             border-bottom: 2px solid #e0e0e0;
-            padding-bottom: 12px;
-            margin-top: 35px;
-            margin-bottom: 20px;
-            font-size: 1.8em;
+            padding-bottom: 10px; /* Reduced */
+            margin-top: 25px; /* Reduced */
+            margin-bottom: 15px; /* Reduced */
+            font-size: 1.6em; /* Reduced */
         }
 
         p {
-            margin-bottom: 18px;
-            font-size: 1.1em;
+            margin-bottom: 15px; /* Reduced */
+            font-size: 1em; /* Reduced */
         }
 
         .details ul {
@@ -58,27 +65,27 @@
         }
 
         .details li {
-            margin-bottom: 15px;
-            padding: 12px 20px;
+            margin-bottom: 10px; /* Reduced */
+            padding: 10px 15px; /* Reduced */
             border-right: 5px solid #3498db;
             background-color: #f8faff;
             border-radius: 8px;
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 10px; /* Reduced */
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
         }
 
         .details li strong {
-            min-width: 120px;
+            min-width: 100px; /* Reduced */
             color: #2c3e50;
-            font-size: 1.1em;
+            font-size: 1em; /* Reduced */
         }
 
         .details li::before {
             display: inline-block;
             margin-left: 8px;
-            font-size: 1.2em;
+            font-size: 1.1em; /* Reduced */
         }
 
         .details li:nth-child(1)::before {
@@ -103,22 +110,23 @@
 
         .participants-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 15px;
-            margin-top: 15px;
-            padding-top: 10px;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* Slightly narrower */
+            gap: 10px; /* Reduced */
+            margin-top: 10px; /* Reduced */
+            padding-top: 8px; /* Reduced */
             border-top: 1px dashed #e0e0e0;
         }
 
         .participant-item {
             background-color: #eaf6ff;
-            padding: 12px 15px;
+            padding: 10px 12px; /* Reduced */
             border-radius: 8px;
             text-align: center;
             font-weight: 600;
             color: #2980b9;
             box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
             transition: transform 0.2s ease, background-color 0.2s ease;
+            font-size: 0.95em; /* Slightly reduced */
         }
 
         .participant-item:hover {
@@ -130,15 +138,15 @@
         .nav-button-container {
             display: flex;
             justify-content: center;
-            margin: 40px 0;
+            margin: 25px 0; /* Reduced */
         }
 
         .nav-button {
             background-color: #3498db;
             color: white;
             border: none;
-            padding: 16px 32px;
-            font-size: 1.2em;
+            padding: 14px 28px; /* Reduced */
+            font-size: 1.1em; /* Reduced */
             border-radius: 8px;
             cursor: pointer;
             text-decoration: none;
@@ -146,7 +154,7 @@
             font-weight: 700;
             display: inline-flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px; /* Reduced */
         }
 
         .nav-button:hover {
@@ -155,65 +163,70 @@
         }
 
         .nav-button::before {
-            content: '🗺️'; /* Map emoji */
-            font-size: 1.1em;
+            content: '🗺️';
+            font-size: 1em; /* Reduced */
         }
 
         .footer {
             text-align: center;
-            margin-top: 50px;
-            font-size: 0.95em;
+            margin-top: 30px; /* Reduced */
+            font-size: 0.9em; /* Reduced */
             color: #777;
-            padding-top: 20px;
+            padding-top: 15px; /* Reduced */
             border-top: 1px solid #eee;
         }
 
         #countdown {
             text-align: center;
-            font-size: 1.6em;
-            margin-bottom: 30px;
+            font-size: 1.4em; /* Reduced */
+            margin-bottom: 25px; /* Reduced */
             color: #e74c3c;
             font-weight: bold;
             background-color: #fff0f0;
-            padding: 15px;
+            padding: 12px; /* Reduced */
             border-radius: 8px;
             border: 1px solid #e74c3c;
         }
 
         @media (max-width: 768px) {
             .container {
-                margin: 20px;
-                padding: 25px;
+                margin: 15px; /* Further reduced */
+                padding: 20px; /* Further reduced */
+                max-height: calc(100vh - 30px); /* Adjust for smaller margins */
             }
 
             h1 {
-                font-size: 2em;
+                font-size: 1.8em; /* Further reduced */
             }
 
             h2 {
-                font-size: 1.5em;
+                font-size: 1.4em; /* Further reduced */
+            }
+
+            p {
+                font-size: 0.95em; /* Further reduced */
             }
 
             .details li {
-                flex-direction: column;
-                align-items: flex-end;
-                text-align: right;
+                padding: 8px 12px; /* Further reduced */
             }
 
             .details li strong {
-                min-width: auto;
-                width: 100%;
-                margin-bottom: 5px;
+                font-size: 0.9em; /* Further reduced */
             }
 
             .nav-button {
                 width: 90%;
-                padding: 14px 20px;
-                font-size: 1.1em;
+                padding: 12px 15px; /* Further reduced */
+                font-size: 1em; /* Further reduced */
             }
 
             .participants-grid {
-                grid-template-columns: 1fr; /* Stack participants on smaller screens */
+                grid-template-columns: 1fr;
+            }
+
+            #countdown {
+                font-size: 1.2em; /* Further reduced */
             }
         }
     </style>
